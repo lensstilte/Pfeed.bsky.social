@@ -21,7 +21,8 @@ print("=== PFEED BOT STARTED ===", flush=True)
 # BOT NAAM        : PFEED
 # PYTHON FILE     : pfeed_reposter.py
 # WORKFLOW FILES  :
-#   .github/workflows/pfeed.yml
+#   .github/workflows/pfeed.yml
+
 #
 # GITHUB SECRETS:
 #   BSKY_USERNAME_PFEED
@@ -33,7 +34,8 @@ ENV_PASSWORD = "BSKY_PASSWORD"
 
 STATE_FILE = os.getenv("STATE_FILE", "state_dmphotos.json")
 # WORKFLOW FILES  :
-#   .github/workflows/PFEED.yml
+#   .github/workflows/PFEED.yml
+
 #
 # GITHUB SECRETS:
 #   BSKY_USERNAME_PFEED
