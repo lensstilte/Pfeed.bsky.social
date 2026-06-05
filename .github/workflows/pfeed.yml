@@ -1,1 +1,49 @@
+name: PFeed Bot
 
+on:
+  
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pfeed-bot
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    env:
+      BSKY_USERNAME: ${{ secrets.BSKY_USERNAME_PFEED }}
+      BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD_PFEED }}
+      STATE_FILE: state_pfeed.json
+      MAX_PER_RUN: 100
+      MAX_PER_USER: 3
+      HOURS_BACK: 3
+      SLEEP_SECONDS: 1.5
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install atproto requests
+
+      - name: Run bot
+        run: python Pfeed_reposter.py
+
+      - name: Commit state
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add state_pfeed.json
+          git commit -m "Update PFeed repost state" || echo "No changes to commit"
+          git pull --rebase origin main || true
+          git push || git push --force-with-lease
