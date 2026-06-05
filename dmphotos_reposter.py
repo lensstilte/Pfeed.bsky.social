@@ -13,20 +13,19 @@ try:
 except Exception:
     pass
 
-print("=== DMPHOTOS BOT STARTED ===", flush=True)
+print("=== PFEED BOT STARTED ===", flush=True)
 
 # ============================================================
 # BOT INFO
 # ============================================================
-# BOT NAAM        : DMPhotos
-# PYTHON FILE     : dmphotos_reposter.py
+# BOT NAAM        : PFEED
+# PYTHON FILE     : pfeed_reposter.py
 # WORKFLOW FILES  :
-#   .github/workflows/dmphotos_03.yml
-#   .github/workflows/dmphotos_33.yml
+#   .github/workflows/pfeed.yml
 #
 # GITHUB SECRETS:
-#   BSKY_USERNAME_DMPHOTOS
-#   BSKY_PASSWORD_DMPHOTOS
+#   BSKY_USERNAME_PFEED
+#   BSKY_PASSWORD_PFEED
 # ============================================================
 
 ENV_USERNAME = "BSKY_USERNAME"
@@ -34,12 +33,11 @@ ENV_PASSWORD = "BSKY_PASSWORD"
 
 STATE_FILE = os.getenv("STATE_FILE", "state_dmphotos.json")
 # WORKFLOW FILES  :
-#   .github/workflows/dmphotos_03.yml
-#   .github/workflows/dmphotos_33.yml
+#   .github/workflows/PFEED.yml
 #
 # GITHUB SECRETS:
-#   BSKY_USERNAME_DMPHOTOS
-#   BSKY_PASSWORD_DMPHOTOS
+#   BSKY_USERNAME_PFEED
+#   BSKY_PASSWORD_PFEED
 # ============================================================
 
 
@@ -48,7 +46,7 @@ STATE_FILE = os.getenv("STATE_FILE", "state_dmphotos.json")
 # ============================================================
 
 FEEDS = {
-    "feed 1": {"link": "https://bsky.app/profile/did:plc:cxrt7ggxkamgzxa47cggtees/feed/aaaoirmgh53zw", "note": "redfoxofficial", "enabled": 1, "allow_posts": 1, "allow_replies": 1, "allow_reposts": 0},
+    "feed 1": {"link": "", "note": "", "enabled": 1, "allow_posts": 1, "allow_replies": 1, "allow_reposts": 0},
     "feed 2": {"link": "", "note": "", "enabled": 0, "allow_posts": 1, "allow_replies": 1, "allow_reposts": 1},
 
     "feed 3": {"link": "", "note": "", "enabled": 0, "allow_posts": 1, "allow_replies": 0, "allow_reposts": 0},
@@ -67,8 +65,8 @@ FEEDS = {
 # ============================================================
 
 LIJSTEN = {
-    "lijst 1": {"link": "https://bsky.app/profile/did:plc:cxrt7ggxkamgzxa47cggtees/lists/3miwepgkt4i2b", "repost accounts": "", "enabled": 1},
-    "lijst 2": {"link": "https://bsky.app/profile/did:plc:cxrt7ggxkamgzxa47cggtees/lists/3miweq3f2on2s", "note": "contentcreaters", "enabled": 1},
+    "lijst 1": {"link": "", "": "", "enabled": 1},
+    "lijst 2": {"link": "", "note": "", "enabled": 1},
     "lijst 3": {"link": "", "note": "", "enabled": 0},
     "lijst 4": {"link": "", "note": "", "enabled": 0},
     "lijst 5": {"link": "", "note": "", "enabled": 0},
@@ -77,10 +75,10 @@ LIJSTEN = {
     "lijst 8": {"link": "", "note": "", "enabled": 0},
 
     # PROMO RANDOM
-    "lijst 9": {"link": "https://bsky.app/profile/did:plc:cxrt7ggxkamgzxa47cggtees/lists/3miwek2ytgh2b", "note": "PROMO RANDOM", "enabled": 1},
+    "lijst 9": {"link": "", "note": "PROMO RANDOM", "enabled": 1},
 
     # PROMO LATEST
-    "lijst 10": {"link": "https://bsky.app/profile/did:plc:cxrt7ggxkamgzxa47cggtees/lists/3miwelc6uvb22", "note": "PROMO LATEST", "enabled": 1},
+    "lijst 10": {"link": "", "note": "PROMO LATEST", "enabled": 1},
 }
 
 
@@ -108,8 +106,8 @@ SELF_RANDOM = {
 # ============================================================
 
 HASHTAGS = [
-    "",
-    "",
+    "#pornfeed",
+    "#bskypromo",
     "",
 ]
 
@@ -119,7 +117,7 @@ HASHTAGS = [
 # ============================================================
 
 EXCLUDE_LISTS = {
-    "exclude 1": {"link": "https://bsky.app/profile/did:plc:cxrt7ggxkamgzxa47cggtees/lists/3mkl4yhuimg2b", "note": "bskypromo stop"},
+    "exclude 1": {"link": "", "note": "bskypromo stop"},
     "exclude 2": {"link": "", "note": ""},
 }
 
@@ -160,9 +158,9 @@ PROMO_FETCH_PER_MEMBER = 100
 # CLEANUP
 # ============================================================
 
-CLEANUP_ENABLED = 1
-CLEANUP_DAYS = 14
-CLEANUP_MAX_PER_RUN = 200
+CLEANUP_ENABLED = 0
+CLEANUP_DAYS = 5000
+CLEANUP_MAX_PER_RUN = 0
 
 
 ENV_USERNAME = "BSKY_USERNAME"
