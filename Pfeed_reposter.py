@@ -67,7 +67,7 @@ FEEDS = {
 # ============================================================
 
 LIJSTEN = {
-    "lijst 1": {"link": "", "": "", "enabled": 1},
+    "lijst 1": {"link": "https://bsky.app/profile/did:plc:xj67qxu2jowf4gwmlxzl5lgn/lists/3mnkhlaephe2x", "note": "pornfeed", "enabled": 1},
     "lijst 2": {"link": "", "note": "", "enabled": 1},
     "lijst 3": {"link": "", "note": "", "enabled": 0},
     "lijst 4": {"link": "", "note": "", "enabled": 0},
@@ -77,7 +77,7 @@ LIJSTEN = {
     "lijst 8": {"link": "", "note": "", "enabled": 0},
 
     # PROMO RANDOM
-    "lijst 9": {"link": "", "note": "PROMO RANDOM", "enabled": 1},
+    "lijst 9": {"link": "https://bsky.app/profile/did:plc:xj67qxu2jowf4gwmlxzl5lgn/lists/3mnkhpckqi225", "note": "PROMO RANDOM", "enabled": 1},
 
     # PROMO LATEST
     "lijst 10": {"link": "", "note": "PROMO LATEST", "enabled": 1},
